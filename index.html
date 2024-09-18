@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+    <div class="wrapper w-[100vw] h-[100vh] flex justify-center items-center flex-col">
+
+        <h1 class="text-[white] opacity-[0.75] uppercase tracking-[2px] text-center leading-[1.2]">Password Generator</h1>
+
+        <div class="password-box flex relative pt-[0.35rem] w-[450px]">
+            <input type="text" readonly placeholder="PASSWORD" display-pass class="password-display bg-[transparent] font-semibold text-[1.5rem]
+            leading-[30px] ">
+            <span  class="copied absolute top-[-25px] right-[-10px]" copyMsg></span>
+            <i class="fa-regular fa-copy absolute top-[35%] right-[1.5rem]" copiedButton style="color: aqua"></i>
+        </div>
+
+        <div class="password-card w-[450px] p-[2rem] ">
+
+            <div class="flex justify-between items-center lengthsec">
+
+                <p class="text-[white] opacity-[0.75] text-[1.5rem]">Password Length</p>
+                <div passwordLength class="len-num"></div>
+    
+            </div>
+       
+            <input type="range" min="1" max="20" value="10" inputSlider class="slider w-[100%] cursor-pointer m-top-[2rem]
+            m-bottom-[1.5rem] appearance-none">
+
+            <div >
+                <div class="check">
+                    <input type="checkbox" id="upperCase" checked>
+                    <label for="upperCase">Include Uppercase Letters</label> <br>
+                </div>
+              
+                <div class="check">
+                    <input type="checkbox" id="lowerCase">
+                    <label for="lowerCase">Include Lowercase Letters</label>  <br>
+                </div>
+                
+                <div class="check"> 
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Include Numbers</label> <br>
+                </div>
+
+                <div class="check"> 
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Include Symbols</label> <br>
+                </div>
+             
+    
+            
+            </div>
+
+           
+
+            <div class="flex justify-between items-center ">
+                <p class="text-[white] m-top-[1.75rem] m-bottom-[2rem] opacity-[0.75] text-[1.5rem]">Strength</p>
+                <div strengthDetector class="w-[1.5rem] h-[1.5rem] rounded-full"></div>
+            </div>
+
+            <button type="submit" genratePass class="text-center text-[1.25rem] font-semibold uppercase gnrtbtn">Generate Password</button>
+
+
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
